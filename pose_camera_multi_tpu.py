@@ -56,7 +56,7 @@ def camThread(results, frameBuffer, camera_width, camera_height, model_width, mo
     global waittime
 
     if videofile == "":
-        cam = cv2.VideoCapture(usbcamno)
+        cam = cv2.VideoCapture(cv2.CAP_DSHOW)
         cam.set(cv2.CAP_PROP_FPS, vidfps)
         cam.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
         cam.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
@@ -197,7 +197,7 @@ if __name__ == '__main__':
     model_height  = 480
 
     try:
-        mp.set_start_method('forkserver')
+        mp.set_start_method('spawn')
         frameBuffer = mp.Queue(3)
         results = mp.Queue()
 
