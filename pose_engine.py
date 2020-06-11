@@ -123,7 +123,10 @@ class PoseEngine(BasicEngine):
 
         # Run the inference (API expects the data to be flattened)
         inference_time, output = self.run_inference(img.flatten())
-        outputs = [output[i:j] for i, j in zip(self._output_offsets, self._output_offsets[1:])]
+        #print(output)
+        #for i, j in zip(self._output_offsets, self._output_offsets[1:]):
+        #    print(i,j)
+        outputs = [output[int(i):int(j)] for i, j in zip(self._output_offsets, self._output_offsets[1:])]
 
         keypoints = outputs[0].reshape(-1, len(KEYPOINTS), 2)
         keypoint_scores = outputs[1].reshape(-1, len(KEYPOINTS))
