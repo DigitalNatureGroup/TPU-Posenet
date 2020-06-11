@@ -102,6 +102,12 @@ $ ./download_2019R2.sh
 $ echo "source /opt/intel/openvino/bin/setupvars.sh" >> ~/.bashrc
 $ source ~/.bashrc
 ```
+## 3-2-3. Only Windows
+Run Sample
+```
+> python pose_camera_single_tpu.py --model .\models\mobilenet\posenet_mobilenet_v1_075_481_641_quant_decoder_edgetpu.tflite
+```
+
 ## 4. Usage
 ```bash
 usage: pose_camera_multi_tpu.py [-h] [--model MODEL] [--usbcamno USBCAMNO]
