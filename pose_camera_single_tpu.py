@@ -94,7 +94,7 @@ if __name__ == '__main__':
     engine = PoseEngine(model, devices[0])
 
     if videofile == "":
-        cam = cv2.VideoCapture(usbcamno)
+        cam = cv2.VideoCapture(cv2.CAP_DSHOW)
         cam.set(cv2.CAP_PROP_FPS, vidfps)
         cam.set(cv2.CAP_PROP_FRAME_WIDTH, camera_width)
         cam.set(cv2.CAP_PROP_FRAME_HEIGHT, camera_height)
